@@ -58,7 +58,6 @@ const resolvers = {
       return db.games;
     },
     updateGame(_, args) {
-      console.log(args);
       const { id, edit: { title, platform } = {} } = args;
       db.games = db.games.map((game) => {
         if (game.id === id) {
