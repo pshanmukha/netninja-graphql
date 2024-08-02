@@ -12,9 +12,9 @@ let games = [
 ];
 
 let authors = [
-  { id: "1", name: "mario", verified: true },
-  { id: "2", name: "yoshi", verified: false },
-  { id: "3", name: "peach", verified: true },
+  { id: "1", name: "mario", verified: true, year: 2001 },
+  { id: "2", name: "yoshi", verified: false, year: 2000 },
+  { id: "3", name: "peach", verified: true, year: 2009 },
 ];
 
 let reviews = [

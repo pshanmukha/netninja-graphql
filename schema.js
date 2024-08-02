@@ -15,6 +15,7 @@ type Review {
 type Author{
     id: ID
     name: String!
+    age: Int!
     verified: Boolean!
     reviews: [Review!]
 }

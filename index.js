@@ -19,10 +19,20 @@ const resolvers = {
       return db.reviews.find((review) => review.id === args.id);
     },
     authors() {
-      return db.authors;
+      return db.authors.map((author) => ({
+        ...author,
+        age: new Date().getFullYear() - author.year,
+      }));
     },
     author(_, args) {
-      return db.authors.find((author) => author.id === args.id);
+      const author = db.authors.find((author) => author.id === args.id);
+      if (author) {
+        return {
+          ...author,
+          age: new Date().getFullYear() - author.year,
+        };
+      }
+      return null;
     },
   },
   Game: {
