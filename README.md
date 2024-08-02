@@ -28,11 +28,6 @@ To set up the project, follow these steps:
    npm install
    ```
 
-3. Install `nodemon` globally if you haven't already:
-   ```bash
-   npm install -D nodemon
-   ```
-
 Look at package.json file, inside scripts object the following script is defined:
 
 ```bash
