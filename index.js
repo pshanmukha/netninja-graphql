@@ -45,6 +45,7 @@ const resolvers = {
     },
   },
   Mutation: {
+    // Mutation resolver to add a new game
     addGame(_, args) {
       const { game } = args;
       db.games.push({
@@ -53,10 +54,12 @@ const resolvers = {
       });
       return db.games[db.games.length - 1];
     },
+    // Mutation resolver to delete a game by id
     deleteGame(_, args) {
       db.games = db.games.filter((game) => game.id !== args.id);
       return db.games;
     },
+    // Mutation resolver to update a game by id
     updateGame(_, args) {
       console.log(args);
       const { id, edit: { title, platform } = {} } = args;
@@ -88,3 +91,7 @@ const { url } = await startStandaloneServer(server, {
 });
 
 console.log(`🚀 Server ready at ${url}`);
+
+// Mutations are used to modify data on the server and return a result.
+// This includes creating, updating, or deleting records.
+// While queries are used for reading data, mutations handle the write operations.

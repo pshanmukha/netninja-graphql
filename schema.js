@@ -27,6 +27,7 @@ type Query {
     author(id: ID!): Author
 }
 
+# schema definition for the mutations:
 type Mutation {
     addGame(game: AddGameInput!): Game
     deleteGame(id: ID!): [Game]
@@ -43,3 +44,13 @@ input UpdateGameInput {
     platform: [String!]
 }
 `;
+
+// input types:
+
+// Input types in GraphQL are special object types that allow you to
+// pass complex objects as arguments to mutations or queries.
+// They are defined similarly to regular object types but are used exclusively for input purposes.
+
+// Input types are particularly useful for mutations,
+// where you often need to pass structured data to create or update records.
+// They help in maintaining a clean and clear schema by grouping related fields together.
